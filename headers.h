@@ -1,6 +1,6 @@
 #pragma once
-#include <iostream>
+#include <string>
 
-int main();
 void clears();
-void progressbar95();
+void systemlist();
+void boot(std::string osload);
