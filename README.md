@@ -1,5 +1,4 @@
 [![Download](https://img.shields.io/badge/version-0.2-green)]((https://github.com/Catafrancia123/progresscpp/releases/latest))
-
 # progresscpp
 ProgressCLI but in C++
 
