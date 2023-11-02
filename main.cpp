@@ -6,41 +6,52 @@ using namespace std;
 void systemchoice(string name = "null");
 void lang();
 bool exists (const std::string& name);
+void systemlist();
+void ansiescape(string boolean);
 
 // version and build date (do not touch!)
-string ver = "0.1.2", build = "25-10-2023";
+string ver = "0.2", build = "2-11-2023";
 
 int main() {
+    clears();
     bool existed = exists("save.cpps");
 
     if (existed == 1) {
         cout << "Save file exists.";
-    } else if (existed == 0) {
+        checklinefile("save.cpps", "ANSIEscapeWarning", "main");
+    } else if (existed == 0) {  
         ofstream ("save.cpps");
         lang();
     } 
+}
 
+void ansiescape(string boolean) {
     clears();
-    string null;
-    cout << "Its recommended to play the game in a terminal that supports ANSI escape codes for the best experience." << endl;
-    cout << "Press any key to continue..." << endl;
-    getline(cin, null);
-    systemlist();
+    if (boolean == "True") {
+        string null;
+        cout << "Its recommended to play the game in a terminal that supports ANSI escape codes for the best experience." << endl;
+        cout << "Press any key to continue..." << endl;
+        getline(cin, null);
+        systemlist();
+    } else if (boolean == "False") {
+        systemlist();
+    }
 }
 
 void systemlist() {
     while (true) {
         clears();
-        
         string choicesystem;
 
         cout << "ProgressComputer BIOS.19.87 - \033[33mStarBright (un)activated\033[0m\nCLI ver. " << ver << " - compiled " << build << "\n\033[31mGAME UNDER DEVELOPMENT // EXPECT BUGS\033[0m\n\n";
-        cout << "Select System:\n1. Progressbar 95\n> ";
+        cout << "Select System:\n1. Progressbar 95\n2. Progressbar 95+\n> ";
         cin >> choicesystem;
 
         if (choicesystem == "1") {
             systemchoice("PB95");
-        } 
+        } else if (choicesystem == "2") {
+            systemchoice("PB95PLUS");
+        }
     }
 }
 
@@ -62,7 +73,7 @@ void lang() {
         cin >> lang;
 
         if (lang == "en") {
-            save << "Language: English\n";
+            save << "Language: English\nANSIEscapeWarning: True\n";
             save.close(); 
             break;
         }
@@ -74,6 +85,7 @@ void lang() {
 void systemchoice(string name) {
     if (name == "PB95") {
         boot("Progressbar 95");
+    } else if (name == "PB95PLUS") {
+        boot("Progressbar 95+");
     }
-    return;
 }
