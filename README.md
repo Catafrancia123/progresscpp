@@ -11,6 +11,6 @@ Install MYSYS2 first. Then add it to PATH (windows): C:\msys64\ucrt64\bin
 Please note that this is a beta version and not many features have been added. Please wait for new updates!
 
 ## Compiling source code
-To compile the file (windows) type: g++ main.cpp systems.cpp headers.h clear.cpp -o app.exe To the command line.
+To compile the file (windows) type: g++ main.cpp systems.cpp headers.h clear.cpp -o app.exe To the command line or you can use the makefile.
 
 
