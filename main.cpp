@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
-#include "headers.h"
+#include "functions.h"
+#include "bridge.h"
 using namespace std;
 
 void systemchoice(string name = "null");
@@ -10,9 +11,10 @@ void systemlist();
 void ansiescape(string boolean);
 
 // version and build date (do not touch!)
-string ver = "0.2", build = "2-11-2023";
+string ver = "0.3", build = "20-11-2023";
 
 int main() {
+    savefile("English", "True", 0);
     clears();
     bool existed = exists("save.cpps");
 
